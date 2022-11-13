@@ -3,6 +3,7 @@ using DevStudyNotes.API.Models;
 using DevStudyNotes.API.Persistence;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 namespace DevStudyNotes.API.Controllers
 {
@@ -41,9 +42,17 @@ namespace DevStudyNotes.API.Controllers
         }
         
         // api/study-notes HTTP POST
+        /// <summary>
+        /// Cadastrar uma nota de estudo
+        /// </summary>
+        /// <remarks>
+        /// { "title": "Estudos AZ-400", "description": "Sobre o Azure Blob Storage", "isPublic": true }
+        /// </remarks>
+        /// <param name="model">Dados de uma nota de estudo</param>
+        /// <returns>Objeto recém-criado</returns>
+        /// <response code="201">Sucesso</response>
         [HttpPost]
         public IActionResult Post(AddStudyNoteInputModel model) {
-            // Talvez retornar BadRequest
             var studyNote = new StudyNote(model.Title, model.Description, model.IsPublic);
             
             _context.StudyNotes.Add(studyNote);
