@@ -33,7 +33,7 @@ builder.Services.AddSwaggerGen(o =>
         }
     });
 
-    var xmlFile = "DevStudyNotes.API.xml";
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     o.IncludeXmlComments(xmlPath);
 });
