@@ -2,18 +2,22 @@ using DevStudyNotes.API.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Serilog;
-using Serilog.Sinks.MSSqlServer;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 // PARA ACESSO AO BANCO EM MEMÓRIA
-builder.Services.AddDbContext<StudyNoteDbContext>(o => o.UseInMemoryDatabase("DevStudyNotesDb"));
+// builder.Services.AddDbContext<StudyNoteDbContext>(o => o.UseInMemoryDatabase("DevStudyNotesDb"));
 
 // PARA ACESSO AO SQL Server
 // var connectionString = builder.Configuration.GetConnectionString("DevStudyNotes");
 // builder.Services.AddDbContext<StudyNoteDbContext>(o => o.UseSqlServer(connectionString));
+
+// PARA ACESSO AO SQLite
+var connectionString = builder.Configuration.GetConnectionString("DevStudyNotesCs");
+builder.Services.AddDbContext<StudyNoteDbContext>(o => o.UseSqlite(connectionString));
 
 builder.Services.AddControllers();
 
@@ -52,6 +56,9 @@ builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
         //         AutoCreateSqlTable = true,
         //         TableName = "Logs"
         //     })
+
+        // PARA LOG NO SQLite
+        .WriteTo.SQLite(Environment.CurrentDirectory + @"\Data\dados.db")
 
         // PARA LOG NO CONSOLE
         .WriteTo.Console()
