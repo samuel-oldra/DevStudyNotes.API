@@ -1,4 +1,4 @@
-# Projeto de API usando C# e .NET 6
+# Projeto de API usando C# e .NET 7
 
 ## DevStudyNotes - Jornada .NET Direto ao Ponto
 
