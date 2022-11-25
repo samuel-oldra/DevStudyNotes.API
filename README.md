@@ -26,17 +26,17 @@ Foi desenvolvida uma API REST completa de cadastro e leitura de notas de estudo.
 ## Comandos básicos
 ```
 dotnet new gitignore
-dotnet new webapi -o DevGames.API
+dotnet new webapi -o DevStudyNotes.API
 dotnet build
 dotnet run
 dotnet watch run
-dotnet test
 dotnet publish
 ```
 
 ## Tool Entity Framework Core (migrations)
 ```
 dotnet tool install --global dotnet-ef
+dotnet tool uninstall --global dotnet-ef
 ```
 
 ## Migrations

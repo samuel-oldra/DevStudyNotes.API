@@ -3,7 +3,6 @@ using DevStudyNotes.API.Models;
 using DevStudyNotes.API.Persistence;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Serilog;
 
 namespace DevStudyNotes.API.Controllers
 {
