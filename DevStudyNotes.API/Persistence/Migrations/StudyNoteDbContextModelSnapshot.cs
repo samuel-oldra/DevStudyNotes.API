@@ -15,7 +15,7 @@ namespace DevStudyNotes.API.Persistence.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "7.0.4");
+            modelBuilder.HasAnnotation("ProductVersion", "7.0.5");
 
             modelBuilder.Entity("DevStudyNotes.API.Entities.StudyNote", b =>
                 {

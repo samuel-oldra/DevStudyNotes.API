@@ -12,7 +12,7 @@ Foi desenvolvida uma API REST completa de cadastro e leitura de notas de estudo.
 ## Tecnologias e práticas utilizadas
 - ASP.NET Core com .NET 7
 - Entity Framework Core
-- SQLite / In-Memory database
+- SQL Server / SQLite / In-Memory database
 - Swagger
 - Injeção de Dependência
 - Programação Orientada a Objetos

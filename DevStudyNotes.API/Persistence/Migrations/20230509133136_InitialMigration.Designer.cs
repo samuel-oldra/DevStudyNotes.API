@@ -11,14 +11,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DevStudyNotes.API.Persistence.Migrations
 {
     [DbContext(typeof(StudyNoteDbContext))]
-    [Migration("20230403174245_InitialMigration")]
+    [Migration("20230509133136_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "7.0.4");
+            modelBuilder.HasAnnotation("ProductVersion", "7.0.5");
 
             modelBuilder.Entity("DevStudyNotes.API.Entities.StudyNote", b =>
                 {
