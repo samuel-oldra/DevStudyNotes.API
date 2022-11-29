@@ -42,6 +42,28 @@ builder.Services.AddSwaggerGen(o =>
     o.IncludeXmlComments(xmlPath);
 });
 
+// Políticas de CORS
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        }
+    );
+    options.AddPolicy("GitHub",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:5000",
+                               "https://github.com/samuel-oldra")
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        }
+    );
+});
+
 // Serilog
 builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
 {
@@ -81,6 +103,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Enable CORS
+app.UseCors();
+// app.UseCors("GitHub");
+// app.UseCors(o => o.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
 app.UseAuthorization();
 
