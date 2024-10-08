@@ -13,10 +13,10 @@ Foi desenvolvida uma API REST completa de cadastro e leitura de notas de estudo.
 - ASP.NET Core com .NET 7
 - Entity Framework Core
 - SQL Server / SQLite / In-Memory database
-- Swagger
-- Injeção de Dependência
+- Swagger (documentação)
+- Serilog (log)
 - Programação Orientada a Objetos
-- Logs com Serilog
+- Injeção de Dependência
 - Clean Code
 - Publicação
 
@@ -34,9 +34,11 @@ Foi desenvolvida uma API REST completa de cadastro e leitura de notas de estudo.
 ```
 dotnet new gitignore
 dotnet new webapi -o DevStudyNotes.API
+
 dotnet build
 dotnet run
 dotnet watch run
+
 dotnet publish
 ```
 
