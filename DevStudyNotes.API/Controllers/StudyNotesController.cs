@@ -12,6 +12,10 @@ namespace DevStudyNotes.API.Controllers
     {
         private readonly StudyNoteDbContext _context;
 
+        /// <summary>
+        /// Construtor
+        /// </summary>
+        /// <param name="context"></param>
         public StudyNotesController(StudyNoteDbContext context)
             => _context = context;
 
